@@ -1,4 +1,6 @@
 #include "FileSystemNode.h"
+
+#include <QFileInfo>
 #include<ctime>
 #include<sys/stat.h>
 #include <windows.h>
@@ -111,7 +113,7 @@ bool FileSystemNode::is_changed() const
 
 bool FileSystemNode::is_file() const
 {
-	return std::filesystem::is_regular_file(m_path_);
+	return info_.isDir();
 }
 
 const std::filesystem::path& FileSystemNode::get_path() const

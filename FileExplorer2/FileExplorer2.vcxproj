@@ -61,13 +61,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\dev\cppcodec\cppcodec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\boost\boost_1_82_0\boost;C:\dev\cppcodec\cppcodec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\dev\cppcodec\cppcodec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\boost\boost_1_82_0\boost;C:\dev\cppcodec\cppcodec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -98,17 +98,25 @@
     <QtRcc Include="FileExplorer2.qrc" />
     <QtUic Include="FileExplorer2.ui" />
     <QtMoc Include="FileExplorer2.h" />
+    <ClCompile Include="Algorithms.cpp" />
     <ClCompile Include="Directory.cpp" />
     <ClCompile Include="FileExplorer2.cpp" />
     <ClCompile Include="FileSystemNode.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms.h" />
+    <ClInclude Include="APTH.h" />
+    <ClInclude Include="CancellableThreadPool.h" />
+    <ClInclude Include="Definitions.h" />
     <ClInclude Include="Directory.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="FileSystemNode.h" />
     <ClInclude Include="Test.h" />
-    <ClInclude Include="ThreadPoo.h" />
+    <ClInclude Include="ThreadPool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="log.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
